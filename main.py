@@ -18,7 +18,7 @@ def select_image():
         rgb = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
         rgb_with_contours = cv2.drawContours(rgb.copy(), cnt, -1, (0, 255, 0), 2)
 
-        image = Image.fromarray(image)
+        image = Image.fromarray(rgb)
         image = ImageTk.PhotoImage(image)
 
         rgb_with_contours = Image.fromarray(rgb_with_contours)
@@ -30,8 +30,10 @@ def select_image():
         panelB.config(image=rgb_with_contours)
         panelB.image = rgb_with_contours
 
-        entry.delete(20, tk.END)
-        entry.insert(20, len(cnt))
+        entry.config(state="normal")
+        entry.delete(0, tk.END)
+        entry.insert(0, f"Number of Objects: {len(cnt)}")
+        entry.config(state="readonly")
 
 
 def about():
@@ -74,8 +76,7 @@ panelB = ttk.Label(image_frame)
 panelB.grid(row=0, column=1, padx=20)
 
 # Entry widget to display number of objects
-entry = ttk.Entry(main_frame, width=30)
+entry = ttk.Entry(main_frame, width=30, state="readonly")
 entry.grid(row=2, column=0, pady=10)
-entry.insert(0, "Number of Objects: ")
 
 window.mainloop()

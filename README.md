@@ -1,30 +1,58 @@
-# Object Detection Application
+# Object Detectify
 
 ![Python](https://img.shields.io/badge/python-3.7%2B-blue)
 ![License](https://img.shields.io/badge/license-MIT-green)
 
-## Description
-This is a simple object detection application built using Python with tkinter for the GUI and OpenCV for image processing. The application allows users to select an image, detect objects in the image, and display the number of objects along with the image with contours drawn around them.
+A simple desktop application for object detection and counting using OpenCV and Tkinter.
 
 ## Features
-- Select an image from the file system.
-- Detect objects in the selected image.
-- Display the number of objects detected.
-- Visualize the detected objects with contours drawn around them.
-- About option in the menu bar to display information about the application.
 
-## Requirements
-- Python 3.7 or higher
-- OpenCV
-- tkinter (usually included with Python installations)
-- Pillow
+- Browse and select images from your file system
+- Automatic object detection using contour analysis
+- Visual display of detected objects with green contours
+- Real-time object counting
+
+## Installation
+
+1. Clone the repository:
+```bash
+git clone https://github.com/yourusername/Object-Detectify-DIP.git
+cd Object-Detectify-DIP
+```
+
+2. Install dependencies:
+```bash
+pip install -r requirements.txt
+```
 
 ## Usage
-1. Clone the repository to your local machine.
-2. Install the required dependencies using `pip install -r requirements.txt`.
-3. Run the application using `python main.py`.
-4. Click on the "Select Image" button to choose an image.
-5. View the detected objects and the number of objects in the GUI window.
+
+Run the application:
+```bash
+python main.py
+```
+
+1. Click "Select Image" button
+2. Choose an image file
+3. View the original image (left) and detected objects (right)
+4. See the count of detected objects at the bottom
+
+## Requirements
+
+- Python 3.7+
+- OpenCV
+- Pillow
+- Tkinter (included with Python)
+
+## How It Works
+
+The application uses computer vision techniques:
+1. Converts image to grayscale
+2. Applies Gaussian blur to reduce noise
+3. Uses Canny edge detection
+4. Finds and draws contours around detected objects
+5. Counts the total number of objects
 
 ## License
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+MIT License - see [LICENSE](LICENSE) file for details.
