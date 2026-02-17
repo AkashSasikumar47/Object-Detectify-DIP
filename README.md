@@ -16,7 +16,7 @@ A simple desktop application for object detection and counting using OpenCV and 
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/Object-Detectify-DIP.git
+git clone https://github.com/AkashSasikumar47/Object-Detectify-DIP.git
 cd Object-Detectify-DIP
 ```
 
